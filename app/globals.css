@@ -20,9 +20,7 @@
   --font-sans:
     ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
-  --font-mono:
-    ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
-  --font-heading: 'ClashDisplay', sans-serif;
+  --font-clash: 'ClashDisplay', sans-serif;
 
   /* 커서 설정 */
   --cursor-size: 15vw;
@@ -51,10 +49,9 @@ body {
 }
 
 /* 폰트 패밀리 설정 */
-.font-heading {
-  font-family: var(--font-heading);
+.font-clash {
+  font-family: var(--font-clash);
 }
-
 
 /* 포커스 스타일 - 접근성 개선 */
 .focus-ring {

@@ -217,7 +217,7 @@ const WelcomeSection: React.FC<HeroProps> = ({ className = '', onAnimationComple
       {/* 메인 콘텐츠 영역 */}
       <div className="w-full flex items-center justify-start relative h-full tablet:flex-col tablet:pt-[20vw] tablet:px-[6%]">
         {/* 메인 제목 */}
-        <h1 className="flex flex-col font-medium font-heading text-[9vw] leading-[1] w-[80%] mx-auto tablet:w-full tablet:text-[15vw] tablet:mt-[6vw]">
+        <h1 className="flex flex-col font-medium font-clash text-[9vw] leading-[1] w-[80%] mx-auto tablet:w-full tablet:text-[15vw] tablet:mt-[6vw]">
           {/* Welcome 텍스트 */}
           <span
             className="text-black2 w-fit ml-[11vw] hero-anim tablet:ml-0 block"
@@ -304,20 +304,20 @@ const WelcomeSection: React.FC<HeroProps> = ({ className = '', onAnimationComple
         </button>
 
         {/* 시간 및 위치 정보 */}
-        <div className="w-[92%] mx-auto pb-[1vw] flex items-center justify-between font-heading text-[1vw]">
+        <div className="w-[92%] mx-auto pb-[1vw] flex items-center justify-between font-clash text-[1.2vw] ">
           <div>
-            <p className="text-gray1 text-[0.9vw]">timezone</p>
+            <p className="text-gray-400 font-sans">timezone</p>
             <p
               ref={timeElementRef}
               aria-label="현재 시간"
               aria-live="polite"
-              className="font-mono tracking-wider"
+              className="tracking-wider"
             >
               {timeData.currentTime}
             </p>
           </div>
           <div>
-            <p className="text-gray1 text-[0.9vw]">location</p>
+            <p className="text-gray-400 font-sans">location</p>
             <p aria-label={`현재 위치: ${timeData.location}`}>{timeData.location}</p>
           </div>
         </div>
