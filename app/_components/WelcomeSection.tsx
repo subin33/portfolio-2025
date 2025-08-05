@@ -73,21 +73,46 @@ const WelcomeSection: React.FC<HeroProps> = ({ className = '', onAnimationComple
     [locationData]
   );
 
+  // 위치 정보 가져오기
   const fetchUserLocation = useCallback(async () => {
     try {
+      // 로컬 스토리지에서 캐시된 위치 정보 확인
+      const cachedLocation = localStorage.getItem('userLocation');
+      const cachedTimestamp = localStorage.getItem('userLocationTimestamp');
+
+      if (cachedLocation && cachedTimestamp) {
+        const now = Date.now();
+        const cacheAge = now - parseInt(cachedTimestamp);
+        const oneHour = 60 * 60 * 1000; // 1시간 (밀리초)
+
+        // 1시간 이내라면 캐시된 데이터 사용
+        if (cacheAge < oneHour) {
+          const locationData = JSON.parse(cachedLocation);
+          setLocationData(locationData);
+          console.log('캐시된 위치 정보를 사용합니다.');
+          return;
+        }
+      }
+      // 캐시가 없거나 1시간이 지났다면 새로운 요청
       // IP 기반 위치 추정 (무료 API 사용)
       const response = await fetch('https://ipapi.co/json/');
       const data = await response.json();
 
       if (data.city && data.country_name) {
-        setLocationData({
+        const newLocationData = {
           city: data.city,
           country: data.country_name,
           timezone: data.timezone || '+9:00 KST',
-        });
+        };
+
+        // 새로운 위치 정보를 로컬 스토리지에 저장
+        localStorage.setItem('userLocation', JSON.stringify(newLocationData));
+        localStorage.setItem('userLocationTimestamp', Date.now().toString());
+
+        setLocationData(newLocationData);
       }
     } catch (error) {
-      console.error('위치 정보를 가져올 수 없습니다. 기본값을 사용합니다.');
+      console.log('위치 정보를 가져올 수 없습니다. 기본값을 사용합니다.');
       // 에러 발생 시 기본값 유지
     }
   }, []);
@@ -264,7 +289,7 @@ const WelcomeSection: React.FC<HeroProps> = ({ className = '', onAnimationComple
       <div className="absolute w-full bottom-0 left-0 hero-bottom tablet:static tablet:hidden">
         <button
           onClick={handleScrollDown}
-          className="ml-[1vw] mb-[-4vw] dark:invert transition-transform hover:scale-110 focus-ring group"
+          className="ml-[1vw] mb-[-4vw] dark:invert transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 group"
           aria-label="다음 섹션으로 스크롤"
           title="다음 섹션으로 이동"
         >

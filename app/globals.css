@@ -1,31 +1,62 @@
 @import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/assets/fonts/clash-display/ClashDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* 색상 시스템 - 항상 라이트 모드 */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-black2: #171717;
+  --color-gray1: #6b7280;
+  --color-primary: #6366f1;
+
+  /* 폰트 시스템 */
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+  --font-heading: 'ClashDisplay', sans-serif;
+
+  /* 커서 설정 */
+  --cursor-size: 15vw;
+  --cursor-color: #000;
+
+  /* 애니메이션 설정 */
+  --animation-duration: 1.3s;
+  --animation-delay: 0.5s;
+  --animation-stagger: 0.1s;
+  --animation-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 다크 모드 설정을 클라이언트 사이드에서만 적용하도록 수정 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 기본 스타일 */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  /* hydration mismatch 방지를 위한 추가 설정 */
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* 폰트 패밀리 설정 */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+
+/* 포커스 스타일 - 접근성 개선 */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
 }
