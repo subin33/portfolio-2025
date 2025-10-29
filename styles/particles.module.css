@@ -1,0 +1,141 @@
+.aerosolMain {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.textContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--white1);
+  mix-blend-mode: lighten;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textContainer p {
+  font-weight: 500;
+  font-size: 6vw;
+  text-align: center;
+  color: var(--black);
+  z-index: 1;
+}
+
+.shapes {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.shape,
+.shape10 {
+  will-change: transform;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape.shape1,
+.shape10.shape1 {
+  background: #7f7de4;
+  width: 650px;
+  height: 650px;
+  margin: -325px 0 0 -325px;
+}
+
+.shape.shape2,
+.shape10.shape2 {
+  background: #f79694;
+  width: 440px;
+  height: 440px;
+  margin: -220px 0 0 -220px;
+}
+
+.shape.shape3,
+.shape10.shape3 {
+  background: #f5dd94;
+  width: 270px;
+  height: 270px;
+  margin: -135px 0 0 -135px;
+}
+
+/* Aerosoles END */
+
+/* Particles */
+.cbParticlesItem {
+  color: var(--black2);
+}
+._s4 {
+  font-size: 1.5vw;
+  font-weight: 500;
+  position: absolute;
+}
+._v1 {
+  left: 50%;
+}
+._v2 {
+  left: 23%;
+}
+._v3 {
+  left: 25%;
+}
+._v4 {
+  left: 30%;
+}
+._v5 {
+  left: 35%;
+}
+._v6 {
+  left: 45%;
+}
+._v7 {
+  left: 79%;
+}
+._v8 {
+  left: 69%;
+}
+._v9 {
+  left: 89%;
+}
+._v10 {
+  left: 5%;
+}
+._v11 {
+  left: 82%;
+}
+._v12 {
+  left: 18%;
+}
+._v13 {
+  left: 73%;
+}
+._v14 {
+  left: 15%;
+}
+._v15 {
+  left: 10%;
+}
+
+@media screen and (max-width: 1024px) {
+  .textContainer p {
+    font-size: 8vw;
+  }
+  ._s4 {
+    font-size: 3.5vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .textContainer p {
+    font-size: 10vw;
+  }
+}
