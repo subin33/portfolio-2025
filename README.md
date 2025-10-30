@@ -18,14 +18,16 @@ A modern personal portfolio built with Next.js 15 and React 19. Smooth animation
 
 ### UI Preview / Screenshots
 
-<img src="public/assets/readme/preview-1.png" alt="preview-1" width="300" />
-<img src="public/assets/readme/preview-2.png" alt="preview-2" width="300" />
-<img src="public/assets/readme/preview-3.png" alt="preview-3" width="300" />
-<img src="public/assets/readme/preview-4.png" alt="preview-4" width="300" />
-<img src="public/assets/readme/preview-5.png" alt="preview-5" width="300" />
-<img src="public/assets/readme/preview-6.png" alt="preview-6" width="300" />
-<img src="public/assets/readme/preview-7.png" alt="preview-7" width="300" />
-<img src="public/assets/readme/preview-8.png" alt="preview-8" width="300" />
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="public/assets/readme/preview-1.png" alt="preview-1" width="300" />
+  <img src="public/assets/readme/preview-2.png" alt="preview-2" width="300" />
+  <img src="public/assets/readme/preview-3.png" alt="preview-3" width="300" />
+  <img src="public/assets/readme/preview-4.png" alt="preview-4" width="300" />
+  <img src="public/assets/readme/preview-5.png" alt="preview-5" width="300" />
+  <img src="public/assets/readme/preview-6.png" alt="preview-6" width="300" />
+  <img src="public/assets/readme/preview-7.png" alt="preview-7" width="300" />
+  <img src="public/assets/readme/preview-8.png" alt="preview-8" width="300" />
+</div>
 
 ---
 
